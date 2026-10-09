@@ -1,0 +1,55 @@
+# =====================================================================
+# .gitignore — java-backend-lab
+# Mục tiêu: chỉ commit thứ do mình VIẾT RA, không commit thứ máy SINH RA
+# (build output, file cấu hình IDE riêng từng máy) hoặc thứ BÍ MẬT.
+# =====================================================================
+
+# ----- Build output (Maven / Gradle / javac) -----
+# Sinh lại được bằng lệnh build → commit vào chỉ làm repo nặng và gây conflict.
+target/
+!.mvn/wrapper/maven-wrapper.jar
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+.gradle/
+out/
+*.class
+
+# ----- IntelliJ IDEA -----
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# ----- Eclipse / STS -----
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache/
+bin/
+
+# ----- VS Code -----
+.vscode/
+
+# ----- Secrets / cấu hình môi trường — KHÔNG BAO GIỜ commit -----
+# Lỡ commit thì xóa lịch sử là CHƯA ĐỦ: phải đổi password/key ngay.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ----- Log & dữ liệu tạm -----
+*.log
+logs/
+*.tmp
+# Dump DB có thể chứa dữ liệu thật/nặng; chỉ commit script DDL/DML tự viết.
+*.dump
+*.sql.gz
+
+# ----- Hệ điều hành -----
+.DS_Store
+Thumbs.db
